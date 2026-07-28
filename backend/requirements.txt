@@ -4,3 +4,5 @@ python-multipart==0.0.6
 pillow==10.0.0
 sqlmodel==0.0.8
 requests==2.31.0
+httpx==0.24.1
+openai==1.5.0
