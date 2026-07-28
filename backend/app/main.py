@@ -1,11 +1,14 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from .schemas import IdentifyResponse, SpeciesPrediction
-from typing import List
+from .models import Crop, CropCreate, CropRead, CropUpdate
+from .db import init_db, get_session
+from typing import List, Optional
 import io
 from PIL import Image
+from sqlmodel import select
 
-app = FastAPI(title="Crops Library - Backend (stub)")
+app = FastAPI(title="Crops Library - Backend (stub + DB)")
 
 # Allow requests from the mobile app (you can lock this down in prod)
 app.add_middleware(
@@ -15,6 +18,25 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+def on_startup():
+    # Initialize DB and seed some sample crops if empty
+    init_db()
+    with get_session() as session:
+        statement = select(Crop)
+        results = session.exec(statement)
+        any_crop = results.first()
+        if not any_crop:
+            samples = [
+                Crop(common_name="Maize", scientific_name="Zea mays", family="Poaceae", description="Important cereal crop."),
+                Crop(common_name="Tomato", scientific_name="Solanum lycopersicum", family="Solanaceae", description="Widely cultivated edible fruit."),
+                Crop(common_name="Wheat", scientific_name="Triticum aestivum", family="Poaceae", description="Staple cereal worldwide."),
+            ]
+            for c in samples:
+                session.add(c)
+            session.commit()
 
 
 @app.post("/identify", response_model=IdentifyResponse)
@@ -62,6 +84,61 @@ async def diagnose(file: UploadFile = File(...)):
         predictions = [SpeciesPrediction(name="Late blight", confidence=0.78)]
 
     return IdentifyResponse(success=True, error=None, predictions=predictions)
+
+
+# --- Crops CRUD endpoints ---
+
+@app.post("/crops", response_model=CropRead)
+def create_crop(payload: CropCreate):
+    with get_session() as session:
+        crop = Crop.from_orm(payload)
+        session.add(crop)
+        session.commit()
+        session.refresh(crop)
+        return crop
+
+
+@app.get("/crops", response_model=List[CropRead])
+def list_crops(limit: Optional[int] = 100):
+    with get_session() as session:
+        statement = select(Crop).limit(limit)
+        results = session.exec(statement).all()
+        return results
+
+
+@app.get("/crops/{crop_id}", response_model=CropRead)
+def get_crop(crop_id: int):
+    with get_session() as session:
+        crop = session.get(Crop, crop_id)
+        if not crop:
+            raise HTTPException(status_code=404, detail="Crop not found")
+        return crop
+
+
+@app.put("/crops/{crop_id}", response_model=CropRead)
+def update_crop(crop_id: int, payload: CropUpdate):
+    with get_session() as session:
+        crop = session.get(Crop, crop_id)
+        if not crop:
+            raise HTTPException(status_code=404, detail="Crop not found")
+        crop_data = payload.dict(exclude_unset=True)
+        for key, val in crop_data.items():
+            setattr(crop, key, val)
+        session.add(crop)
+        session.commit()
+        session.refresh(crop)
+        return crop
+
+
+@app.delete("/crops/{crop_id}")
+def delete_crop(crop_id: int):
+    with get_session() as session:
+        crop = session.get(Crop, crop_id)
+        if not crop:
+            raise HTTPException(status_code=404, detail="Crop not found")
+        session.delete(crop)
+        session.commit()
+        return {"success": True}
 
 
 if __name__ == "__main__":
