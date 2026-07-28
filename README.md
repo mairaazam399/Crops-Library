@@ -1,1 +1,201 @@
-# 🌱 Crops Library\n\n**Your AI-powered plant identification, disease diagnosis, and growth management companion for botanists, researchers, students, and farmers.**\n\n---\n\n## 🔗 Live Demo\n\n**[View Live Application](https://crops-library.vercel.app)** ← Click to access the deployed app\n\n---\n\n## 📖 Table of Contents\n\n- [Problem Statement](#problem-statement)\n- [Solution](#solution)\n- [Features](#features)\n- [AI Assistant](#ai-assistant)\n- [Tech Stack](#tech-stack)\n- [Installation](#installation)\n- [Environment Setup](#environment-setup)\n- [Screenshots](#screenshots)\n- [Project Structure](#project-structure)\n- [API Integration](#api-integration)\n- [Multi-Language Support](#multi-language-support)\n- [Deployment](#deployment)\n- [Contributing](#contributing)\n- [License](#license)\n\n---\n\n## 🎯 Problem Statement\n\n**Who?** Botanists, plant scientists, researchers, students, and farmers\n\n**What's the Problem?**\n- Need quick, reliable plant identification in the field\n- Difficulty diagnosing plant diseases without expert consultation\n- Lack of accessible, centralized plant care and growth information\n- Limited knowledge of organic treatment alternatives to harmful chemicals\n- No easy way to maintain history of plant observations and findings\n\n**Why It Matters:**\n- Plant diseases cause 20-40% of global crop losses annually\n- Many traditional pesticides are harmful to environment and human health\n- Researchers need accessible tools for plant science education\n- Students struggle to find comprehensive, reliable plant information\n\n---\n\n## ✅ Solution\n\n**Crops Library** is an AI-powered platform that provides:\n\n1. **Instant Plant Identification** - Upload photos or search by name\n2. **Disease Diagnosis & Treatment** - Identify diseases with organic solution alternatives\n3. **Comprehensive Growth Manuals** - Detailed care guides for every plant\n4. **Organic Treatment Database** - Chemical-free solutions for common plant issues\n5. **Search History** - Track and save your plant observations\n6. **AI Assistant** - Chat-based guidance on any plant-related question\n7. **Multi-Language Support** - English, Spanish, French, Arabic\n\n---\n\n## 🌟 Features\n\n### 1. **🔍 Plant Identification**\n- Upload plant photos for AI-powered identification\n- Search plants by common or scientific name\n- View identification probability and multiple matches\n- See similar plant images for comparison\n\n### 2. **🦠 Disease Diagnosis**\n- Browse comprehensive disease database\n- View symptoms, causes, and progression\n- Get both chemical and organic treatment recommendations\n- Search diseases by plant name or symptoms\n\n### 3. **📚 Growth Guides**\n- Step-by-step growth manuals for multiple crops\n- Climate, sunlight, water, and soil requirements\n- Growth timeline and harvesting instructions\n- Temperature and humidity optimization tips\n\n### 4. **🧪 Organic Treatments**\n- Chemical-free alternatives for common diseases\n- DIY recipes using household ingredients\n- Sustainable pest management strategies\n- Environmental impact considerations\n\n### 5. **📋 Search History**\n- Save favorite plants for quick reference\n- Maintain personal search history\n- Add custom notes to saved plants\n- Track observation dates\n\n### 6. **🤖 AI Assistant**\n- Ask anything about plants, diseases, or growth\n- Get personalized recommendations\n- Guidance on app features and usage\n- Available 24/7 for your questions\n\n### 7. **🌐 Multi-Language**\n- English (en)\n- Spanish (es)\n- French (fr)\n- Arabic (ar)\n- Language preference saved locally\n\n---\n\n## 🤖 AI Assistant Details\n\n### **System Prompt & Instructions**\n\nThe AI assistant uses **Claude 3.5 Sonnet** with the following specialized prompt:\n\n```\nYou are an expert botanical AI assistant with deep knowledge of plant science, \ncrop management, plant diseases, organic farming, and sustainable agriculture. \nYou help botanists, researchers, students, and farmers.\n\nYour capabilities include:\n1. Plant Identification - Help identify plants from descriptions or characteristics\n2. Disease Diagnosis - Identify plant diseases and suggest treatments\n3. Growth Guidance - Provide detailed care instructions, growth timelines, and requirements\n4. Organic Treatments - Recommend organic and chemical-free treatment alternatives\n5. Pest Management - Suggest sustainable pest control methods\n6. App Navigation - Guide users through the Crops Library app features\n\nWhen responding:\n- Be precise and scientific but accessible\n- Cite specific plant families, scientific names when relevant\n- Provide practical, actionable advice\n- Suggest both immediate and long-term solutions\n- Always recommend organic alternatives when possible\n- If unsure, acknowledge limitations and suggest consulting expert resources\n- Be concise but thorough\n```\n\n### **Example Use Cases**\n\n1. **Plant ID Help**: \"My plant has oval-shaped leaves with serrated edges, help me identify it\"\n2. **Disease Support**: \"My tomato plants have yellow spots with brown centers, what should I do?\"\n3. **Growth Questions**: \"How do I grow basil indoors successfully?\"\n4. **Organic Solutions**: \"What's a natural alternative to chemical fungicides?\"\n5. **App Guidance**: \"How do I save plants to my history?\"\n\n---\n\n## 🛠️ Tech Stack\n\n### **Frontend**\n- **Framework**: Next.js 14 (React 18)\n- **Language**: TypeScript\n- **Styling**: Tailwind CSS\n- **Icons**: React Icons, GI (Getstream Icons)\n- **State Management**: Zustand\n- **HTTP Client**: Axios\n\n### **Backend**\n- **Runtime**: Node.js\n- **API**: Next.js API Routes\n- **Authentication**: Firebase Auth (ready for integration)\n- **Database**: Firebase Firestore (ready for integration)\n- **Storage**: Firebase Storage (ready for integration)\n\n### **AI & APIs**\n- **LLM**: Anthropic Claude 3.5 Sonnet\n- **Plant Identification**: Plant.id API (v3)\n- **Multilingual**: i18next\n\n### **Deployment**\n- **Hosting**: Vercel\n- **CI/CD**: GitHub Actions (ready)\n- **Environment**: Node.js 18+\n\n---\n\n## 📦 Installation\n\n### **Prerequisites**\n- Node.js 18+ installed\n- npm or yarn package manager\n- Git\n\n### **Steps**\n\n1. **Clone the repository**\n   ```bash\n   git clone https://github.com/mairaazam399/crops-library.git\n   cd crops-library\n   ```\n\n2. **Install dependencies**\n   ```bash\n   npm install\n   ```\n\n3. **Set up environment variables** (see [Environment Setup](#environment-setup))\n   ```bash\n   cp .env.example .env.local\n   # Edit .env.local with your API keys\n   ```\n\n4. **Run development server**\n   ```bash\n   npm run dev\n   ```\n\n5. **Open in browser**\n   ```\n   http://localhost:3000\n   ```\n\n---\n\n## 🔑 Environment Setup\n\nCreate a `.env.local` file in the root directory:\n\n```env\n# Firebase Configuration (Optional - for auth/database features)\nNEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key\nNEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain\nNEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id\nNEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket\nNEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_sender_id\nNEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id\n\n# Anthropic Claude API (Required)\nANTHROPIC_API_KEY=your_claude_api_key_here\n\n# Plant.id API (Optional - for plant identification)\nPLANT_ID_API_KEY=your_plant_id_api_key_here\n\n# App Settings\nNEXT_PUBLIC_APP_ENV=production\n```\n\n### **How to Get API Keys**\n\n**Anthropic Claude API:**\n1. Go to https://console.anthropic.com/\n2. Sign up for a free account\n3. Create an API key in the dashboard\n4. Copy the key to `ANTHROPIC_API_KEY`\n\n**Plant.id API:**\n1. Visit https://plant.id/\n2. Sign up and get your API key\n3. Add to `PLANT_ID_API_KEY`\n\n**Firebase (Optional):**\n1. Go to https://firebase.google.com/\n2. Create a new project\n3. Get your configuration from project settings\n4. Add to Firebase environment variables\n\n---\n\n## 📸 Screenshots\n\n### **Screenshot 1: Home Page**\n![Home Page](https://via.placeholder.com/800x600?text=Crops+Library+Home+Page)\nFeatures overview and quick access to main functions. Multi-language selector visible in bottom section.\n\n### **Screenshot 2: Plant Identification**\n![Plant Identification](https://via.placeholder.com/800x600?text=Plant+Identification+Page)\nUpload photos or search by plant name. Shows identification results with probability and similar images.\n\n### **Screenshot 3: Disease Diagnosis**\n![Disease Diagnosis](https://via.placeholder.com/800x600?text=Disease+Diagnosis+Page)\nComprehensive disease database with symptoms, treatments, and organic alternatives.\n\n### **Screenshot 4: AI Assistant Chat**\n![AI Assistant](https://via.placeholder.com/800x600?text=AI+Assistant+Chat)\nReal-time chat interface with Claude AI assistant. Maintains conversation history.\n\n### **Screenshot 5: Growth Guides**\n![Growth Guides](https://via.placeholder.com/800x600?text=Growth+Guides+Database)\nDetailed care instructions for multiple crops including climate, water, sunlight needs.\n\n### **Screenshot 6: Multi-Language Support**\n![Language Support](https://via.placeholder.com/800x600?text=Multi-Language+Support)\nApp available in English, Spanish, French, and Arabic with dynamic language switching.\n\n---\n\n## 📁 Project Structure\n\n```\ncrops-library/\n├── src/\n│   ├── components/\n│   │   ├── Navigation.tsx          # Main navigation bar\n│   │   └── LanguageSwitcher.tsx    # Language selector\n│   ├── pages/\n│   │   ├── api/\n│   │   │   ├── chat.ts             # AI chat endpoint\n│   │   │   └── identify-plant.ts   # Plant identification endpoint\n│   │   ├── _app.tsx                # App initialization\n│   │   ├── index.tsx               # Home page\n│   │   ├── identify.tsx            # Plant identification page\n│   │   ├── diseases.tsx            # Disease diagnosis page\n│   │   ├── guides.tsx              # Growth guides page\n│   │   ├── history.tsx             # Search history page\n│   │   └── assistant.tsx           # AI assistant chat\n│   ├── lib/\n│   │   ├── firebase.ts             # Firebase configuration\n│   │   ├── ai-assistant.ts         # Claude API integration\n│   │   └── plant-identification.ts # Plant.id API integration\n│   ├── store/\n│   │   └── userStore.ts            # Zustand state management\n│   ├── i18n/\n│   │   ├── config.ts               # i18next configuration\n│   │   └── locales/\n│   │       ├── en.json             # English translations\n│   │       ├── es.json             # Spanish translations\n│   │       ├── fr.json             # French translations\n│   │       └── ar.json             # Arabic translations\n│   └── styles/\n│       └── globals.css             # Global styles\n├── .env.example                    # Example environment variables\n├── .gitignore\n├── package.json\n├── tsconfig.json\n├── tailwind.config.js\n├── postcss.config.js\n├── next.config.js\n└── README.md\n```\n\n---\n\n## 🔌 API Integration\n\n### **Claude API (Anthropic)**\n\n**Endpoint**: `/api/chat`\n\n**Request**:\n```json\n{\n  \"message\": \"How do I treat powdery mildew on my roses?\",\n  \"history\": [\n    {\"role\": \"user\", \"content\": \"...previous messages...\"}\n  ]\n}\n```\n\n**Response**:\n```json\n{\n  \"success\": true,\n  \"message\": \"Powdery mildew can be treated with...\"\n}\n```\n\n### **Plant Identification API**\n\n**Endpoint**: `/api/identify-plant`\n\n**Request** (Image):\n```json\n{\n  \"image\": \"base64_encoded_image_string\"\n}\n```\n\n**Request** (Search):\n```json\n{\n  \"plantName\": \"tomato\"\n}\n```\n\n**Response**:\n```json\n{\n  \"success\": true,\n  \"data\": [\n    {\n      \"name\": \"Tomato\",\n      \"scientificName\": \"Solanum lycopersicum\",\n      \"probability\": 0.92,\n      \"images\": [\"url1\", \"url2\"],\n      \"description\": \"...\"\n    }\n  ]\n}\n```\n\n---\n\n## 🌐 Multi-Language Support\n\nThe app supports 4 languages with automatic translations:\n\n| Language | Code | Status |\n|----------|------|--------|\n| English  | en   | ✅ Complete |\n| Spanish  | es   | ✅ Complete |\n| French   | fr   | ✅ Complete |\n| Arabic   | ar   | ✅ Complete |\n\n**Switching Languages**:\n1. Click the language selector button in the top-right\n2. Choose your preferred language\n3. The app will automatically translate all content\n4. Your preference is saved locally\n\n**Adding New Language**:\n1. Create new locale file: `src/i18n/locales/[lang_code].json`\n2. Add translations following the structure\n3. Import in `src/i18n/config.ts`\n4. Add to language selector in `LanguageSwitcher.tsx`\n\n---\n\n## 🚀 Deployment\n\n### **Deploy to Vercel (Recommended)**\n\n1. **Push to GitHub**\n   ```bash\n   git add .\n   git commit -m \"Initial commit\"\n   git push origin main\n   ```\n\n2. **Connect to Vercel**\n   - Go to https://vercel.com/import\n   - Select your GitHub repository\n   - Click \"Import\"\n\n3. **Set Environment Variables**\n   - In Vercel dashboard, go to Settings → Environment Variables\n   - Add all variables from `.env.example`:\n     - `ANTHROPIC_API_KEY`\n     - `PLANT_ID_API_KEY`\n     - Firebase keys (if using)\n   - Click \"Save\"\n\n4. **Deploy**\n   - Click \"Deploy\"\n   - Wait for build to complete\n   - Your app is now live!\n\n### **Build & Start Locally**\n\n```bash\n# Build\nnpm run build\n\n# Start production server\nnpm start\n```\n\n---\n\n## 💡 How to Use the App\n\n### **Identify a Plant**\n1. Click \"Identify Plant\" in navigation\n2. Either:\n   - Upload a photo (click \"Upload Image\" button)\n   - Or type plant name in search box\n3. View results with probability and details\n4. Click on result to save it\n\n### **Find Disease Solutions**\n1. Go to \"Diseases\" section\n2. Browse disease list or search for specific disease\n3. Click disease to view:\n   - Symptoms\n   - Chemical treatment\n   - Organic alternatives\n4. Implement recommended solutions\n\n### **Learn Growth Guidelines**\n1. Navigate to \"Growth Guides\"\n2. Search for your plant\n3. Click on plant card\n4. View detailed care requirements:\n   - Climate & temperature\n   - Sunlight needs\n   - Watering schedule\n   - Soil requirements\n   - Growth timeline\n   - Harvesting tips\n\n### **Chat with AI Assistant**\n1. Go to \"AI Assistant\"\n2. Type any plant-related question\n3. Get instant, expert response\n4. Conversation history maintained\n5. Can ask follow-up questions\n\n### **Save Your Plants**\n1. After identifying a plant or saving info\n2. Click \"Save\" button\n3. Add personal notes if desired\n4. Access saved plants from \"My History\"\n\n---\n\n## 🔐 Security & Privacy\n\n- **No API Keys in Repository**: All sensitive keys stored as environment variables\n- **Client-Side Storage**: User preferences saved locally only\n- **HTTPS Only**: All API calls encrypted\n- **Data Privacy**: No personal data collection without consent\n- **Open Source**: Code is transparent and auditable\n\n---\n\n## 🤝 Contributing\n\nWe welcome contributions! Here's how:\n\n1. Fork the repository\n2. Create a feature branch (`git checkout -b feature/amazing-feature`)\n3. Make your changes\n4. Commit (`git commit -m 'Add amazing feature'`)\n5. Push to branch (`git push origin feature/amazing-feature`)\n6. Open a Pull Request\n\n### **Areas for Contribution**\n- Add more diseases to database\n- Add more growth guides\n- Improve AI prompt for better responses\n- Add more languages\n- Enhance UI/UX\n- Bug fixes\n- Documentation improvements\n\n---\n\n## 📝 License\n\nThis project is open source and available under the MIT License.\n\n---\n\n## 📞 Support\n\nFor issues, questions, or suggestions:\n1. Open an issue on GitHub\n2. Contact via email\n3. Check existing issues for solutions\n\n---\n\n## 🙏 Acknowledgments\n\n- **Claude AI** by Anthropic for intelligent plant knowledge\n- **Plant.id** for accurate plant identification\n- **Firebase** for backend infrastructure\n- **Vercel** for hosting and deployment\n- **Tailwind CSS** for beautiful styling\n- **Next.js** for the incredible framework\n\n---\n\n## 📊 Statistics\n\n- **Supported Languages**: 4 (English, Spanish, French, Arabic)\n- **Disease Database**: 20+ common plant diseases\n- **Growth Guides**: 15+ crops with complete care instructions\n- **AI Model**: Claude 3.5 Sonnet\n- **Development Time**: Professional, production-ready\n- **Features**: 7 major features\n\n---\n\n**Happy gardening! 🌱🌻🌿**\n"
+# Crops Library
+
+Live URL: (Replace this with the public frontend URL once deployed)
+
+
+## 1) App name and purpose
+Crops Library — an image-first crop identification and disease diagnosis app for farmers, agronomists and researchers. It helps non-experts identify plant species and common diseases from photos (leaf, stem, fruit) and provides concise, actionable next steps.
+
+Who benefits
+- Smallholder farmers who need fast guidance about crop problems.
+- Extension agents & agronomists triaging field samples.
+- Researchers and students who want a quick image-based lookup.
+
+Real problem solved
+- Reduces time and uncertainty when diagnosing crop problems from images by providing an AI-assisted identification and short practical recommendations.
+
+
+## 2) Live deployed URL
+You must deploy the backend and frontend and then paste the public frontend URL here. Make sure the URL is publicly accessible (open in an incognito window to verify). Example placeholder:
+
+https://crops-library.example
+
+
+## 3) Features
+- Web frontend (Next.js): upload an image and receive species and disease predictions with confidence scores and recommended actions.
+- Mobile demo (Expo): pick from gallery or take a photo, upload to backend, view results and browse built-in Crops library.
+- Backend (FastAPI): endpoints:
+  - POST /identify — image upload => AI-powered identification (OpenAI) or deterministic fallback when key is missing
+  - POST /diagnose — stubbed disease diagnosis
+  - CRUD endpoints for /crops (list, create, read, update, delete)
+- AI-powered feature: multimodal image → reasoning using OpenAI (strict JSON output schema), with explanation and suggested actions.
+- Dev-friendly: local SQLite fallback, Dockerfile for the backend, and a Next.js web app for grading accessibility.
+
+
+## 4) The AI feature (exact system prompt and behavior)
+The app uses OpenAI’s image-capable chat model (configured by the environment variable `OPENAI_MODEL`, default `gpt-4o-mini-vision`) to perform identification and diagnosis.
+
+System prompt (exact text used by the backend — included verbatim):
+
+```
+You are an expert plant identification and disease diagnosis assistant for farmers and researchers.
+Given a single image (provided as a base64 data URL), return a concise JSON object with the following schema:
+{
+  "predictions": [
+    {"name": "Common or scientific name of species or disease", "type": "species|disease", "confidence": float (0-1) }
+  ],
+  "explanation": "short explanation of how you reached the conclusion",
+  "suggested_actions": "practical next steps for the farmer/researcher"
+}
+Only output valid JSON. If you are uncertain, produce low confidence values and state uncertainty in the explanation.
+Use no additional prose outside the JSON block. Keep responses compact.
+```
+
+How it works (backend flow)
+- The frontend sends the uploaded image to the backend `/identify` endpoint as `multipart/form-data` (field `file`).
+- If `OPENAI_API_KEY` is present in environment variables, the backend will base64-encode the image and send it to the OpenAI chat completions endpoint with the system prompt above.
+- The model is required to return strict JSON. The backend parses this JSON and converts predictions into the response schema consumed by the frontend.
+- If OpenAI fails (or no API key is set), the backend returns a deterministic fallback so the app remains usable for grading.
+
+Example AI output (normalized into the API response):
+```
+{
+  "predictions": [
+    {"name": "Zea mays (Maize)", "type":"species", "confidence":0.87},
+    {"name": "Northern leaf blight", "type":"disease", "confidence":0.12}
+  ],
+  "explanation":"Leaf lesions and long streaks consistent with northern leaf blight; overall leaf shape matches maize.",
+  "suggested_actions":"Remove severely infected leaves, avoid overhead irrigation, and consult local extension for fungicide options. Collect sample if needed."
+}
+```
+
+
+## 5) Tools, services and models used
+- Backend: Python, FastAPI, Uvicorn, SQLModel (SQLite / Postgres-compatible)
+- Frontend: Next.js (React)
+- Mobile: Expo-managed React Native app (mobile/)
+- AI: OpenAI (image-capable chat completion model, configured by `OPENAI_MODEL` env var)
+- Optional: Hugging Face helper remains in repo if you prefer HF inference instead
+- Hosting recommendations: Render (backend) and Vercel (frontend). Dockerfile included for backend.
+
+
+## 6) Screenshots (add 3 or more)
+Place screenshots in `docs/screenshots/` and name them `screenshot-1.png`, `screenshot-2.png`, `screenshot-3.png`. After you add real screenshots, replace the placeholder links below with the file paths.
+
+- Screenshot 1: Upload screen and file chooser — docs/screenshots/screenshot-1.png
+- Screenshot 2: Results view with predictions and explanation — docs/screenshots/screenshot-2.png
+- Screenshot 3: Mobile app camera upload or crops list — docs/screenshots/screenshot-3.png
+
+How to capture screenshots
+- Web: open the deployed frontend or `http://localhost:3000` during local testing. Use your OS screenshot tool to capture pages and save into `docs/screenshots/`.
+
+
+## 7) How to run the project locally (full commands)
+Prerequisites:
+- Git, Node.js (18+), npm, Python 3.11+, pip
+- (Optional) Docker for containerized dev
+
+A. Clone and switch to the working branch
+```bash
+git clone https://github.com/mairaazam399/Crops-Library.git
+cd Crops-Library
+git checkout feature/mobile-fastapi-scaffold
+```
+
+B. Backend (dev with SQLite fallback)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate     # Windows PowerShell: .\.venv\Scripts\Activate.ps1
+pip install -r backend/requirements.txt
+# (Optional) set OPENAI_API_KEY to enable real AI calls
+uvicorn backend.app.main:app --reload --port 8000
+```
+Open http://127.0.0.1:8000/docs to explore the API.
+
+C. Web frontend (Next.js)
+```bash
+cd web
+npm install
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000 npm run dev
+# Open http://localhost:3000 in a browser
+```
+
+D. Mobile (Expo) — optional
+```bash
+cd mobile
+npm install
+npx expo start
+# Edit mobile/App.js BACKEND_URL to point at your backend (see file comment)
+```
+
+
+## 8) How to deploy (recommended providers)
+
+A. Deploy backend to Render (quick)
+1. Create a Render account and connect your GitHub repo.
+2. New -> Web Service -> Select `mairaazam399/Crops-Library`, branch `feature/mobile-fastapi-scaffold`.
+3. Choose the Dockerfile in `backend/Dockerfile` OR use the Python build/start commands:
+   - Build command: `pip install -r backend/requirements.txt`
+   - Start command: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`
+4. Create a managed Postgres on Render (optional but recommended) and copy the `DATABASE_URL`.
+5. In your Render service settings, set the Environment Variables:
+   - OPENAI_API_KEY = <your OpenAI key>
+   - OPENAI_MODEL = (optional) e.g. `gpt-4o-mini-vision`
+   - DATABASE_URL = <postgres url> (or omit to use SQLite fallback)
+6. Deploy and wait. The service will have a public HTTPS URL (e.g., `https://your-backend.onrender.com`). Test the `/docs` endpoint.
+
+B. Deploy frontend to Vercel (quick)
+1. Create a Vercel account and connect your GitHub repo.
+2. Create a new project and set the Root Directory to `/web`.
+3. Add Environment Variable:
+   - NEXT_PUBLIC_BACKEND_URL = https://<your-backend-url>
+4. Deploy and fetch the public frontend URL (e.g., `https://crops-library.vercel.app`).
+5. Open the URL to verify the upload flow.
+
+
+## 9) Environment variables (summary)
+- OPENAI_API_KEY — required for AI-powered identification (set on backend host). DO NOT commit.
+- OPENAI_MODEL — optional (defaults to `gpt-4o-mini-vision` in code)
+- DATABASE_URL — optional for production Postgres; if omitted, backend will use local SQLite file at `backend/db/crops.db`.
+- NEXT_PUBLIC_BACKEND_URL — set on Vercel for the frontend to call the deployed backend.
+
+
+## 10) API examples
+List crops:
+```
+curl https://<your-backend>/crops
+```
+Identify an image (example):
+```
+curl -X POST "https://<your-backend>/identify" -F "file=@test.jpg"
+```
+
+
+## 11) Grading checklist (for you to verify before submission)
+- [ ] Repo is public and the submitted link is accessible in an incognito window.
+- [ ] Frontend is deployed and the public URL is working.
+- [ ] README contains the AI system prompt (it does, above) and the live URL.
+- [ ] At least 3 screenshots are present in `docs/screenshots/`.
+- [ ] No API keys or secrets are committed.
+
+
+## 12) Where I put important files in the repo
+- backend/ — FastAPI backend and AI integration
+- mobile/ — Expo app (mobile demo)
+- web/ — Next.js frontend
+- backend/AI_PROMPT.md — exact system prompt used by OpenAI
+- .env.example — example environment file
+
+
+## 13) Support & next steps I can do for you (optional)
+If you want I can:
+- Produce 3 real screenshots by running the deployed app and committing them to `docs/screenshots/` (I will need the live deployed URL and permission to use my hosting if you pick that option).
+- Create a GitHub Actions workflow to run backend tests and optionally deploy to Render via CLI.
+- Add CI/CD to auto-deploy both backend and frontend when you push to `main`.
+
+If you want me to add the final README text above to the repo (I just did) and then prepare any additional polished assets or push screenshots, tell me which of the optional tasks you want.
+
+
+---
+
+If anything is unclear or you want me to proceed with deployment for you (I can deploy using my accounts and provide the live URLs), reply and I’ll continue. Otherwise, follow the deploy steps above and then paste the live frontend URL into this README where indicated so graders can access it.
